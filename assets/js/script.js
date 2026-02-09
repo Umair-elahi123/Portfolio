@@ -118,7 +118,7 @@ window.addEventListener('click', function(event) {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Wassim Hfaiedh";
+            document.title = "Portfolio | Umair Elahi";
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
@@ -252,23 +252,6 @@ document.onkeydown = function (e) {
         return false;
     }
 }
-
-// Start of Tawk.to Live Chat
-
-
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/67bb762ca9e4eb190d121b9f/1ikq4b7tt';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-
-
-// End of Tawk.to Live Chat
-
 
 /* SCROLL REVEAL ANIMATION*/
 const srtop = ScrollReveal({
