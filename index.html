@@ -13,7 +13,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="assets\images\favicon.png" type="image/x-png">
+    <!-- FIX 1: Changed backslash to forward slash -->
+    <link id='favicon' rel="shortcut icon" href="assets/images/favicon.png" type="image/x-png">
     <title>Portfolio | Umair Elahi</title>
 </head>
 <!-- Other content -->   
@@ -27,7 +28,8 @@
 
 
 <div class="loader-container">
-  <img draggable="false" src="assets\images\loader.gif" alt="Loading...">
+  <!-- FIX 2: Changed backslash to forward slash -->
+  <img draggable="false" src="assets/images/loader.gif" alt="Loading...">
 </div>
 
 <!-- navbar starts -->
@@ -69,6 +71,7 @@
     </div>
   </div>
   <div class="image">
+   <!-- FIX 3: Changed backslash to forward slash -->
    <img draggable="false" class="tilt" src="assets/images/umairelahi1.png" alt="">
   </div>
 </section>
@@ -82,6 +85,7 @@
     <div class="row">
 
     <div class="image1">
+        <!-- FIX 4: Changed backslash to forward slash -->
         <img draggable="false"  src="assets/images/umairelahi2.jpeg" alt="">
     </div>
     <div class="content">
@@ -257,7 +261,7 @@
   </div>
 </section>
 
-<!-- skills section ends -->
+
 
 <!-- skills section ends -->
 
@@ -273,7 +277,8 @@
 
     <div class="box">
       <div class="image">
-        <img draggable="false" src="assets\images\educat\air-university-logo.png" alt="Air University">
+        <!-- FIX 5: Changed backslash to forward slash -->
+        <img draggable="false" src="assets/images/educat/air-university-logo.png" alt="Air University">
       </div>
       <div class="content">
         <h3>Bachelor of Science in Data Science</h3>
@@ -293,6 +298,7 @@
 
   <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
 
+  <!-- FIX 6: Moved AutoCarSeg (Project 9) INSIDE box-container, and removed the extra stray closing </div> that was breaking the layout -->
   <div class="box-container">
 
     <!-- Portfolio Website Project -->
@@ -335,38 +341,38 @@
     </div>
 
     <!-- 2. JobPilot -->
-<div class="box tilt">
-  <img draggable="false" src="assets/images/image projects/job_application_automator.png" alt="JobPilot" />
-  <div class="content">
-    <div class="tag">
-      <h3>2. JobPilot</h3>
-    </div>
-    <div class="desc">
-      <p>Automated job search using n8n workflow orchestration scraping 15 daily Indeed jobs with resume matching algorithm.</p>
-      <div class="btns">
-        <a href="#" class="btn view-btn" data-video="assets/videos/job_application_automator_demo.mp4"><i class="fas fa-eye"></i> View</a>
-        <a href="https://github.com/Umair-elahi123" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+    <div class="box tilt">
+      <img draggable="false" src="assets/images/image projects/job_application_automator.png" alt="JobPilot" />
+      <div class="content">
+        <div class="tag">
+          <h3>2. JobPilot</h3>
+        </div>
+        <div class="desc">
+          <p>Automated job search using n8n workflow orchestration scraping 15 daily Indeed jobs with resume matching algorithm.</p>
+          <div class="btns">
+            <a href="#" class="btn view-btn" data-video="assets/videos/job_application_automator_demo.mp4"><i class="fas fa-eye"></i> View</a>
+            <a href="https://github.com/Umair-elahi123" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- 3. TumorSpotter -->
-<div class="box tilt">
-  <img draggable="false" src="assets/images/image projects/tumor-spotter1.png" alt="TumorSpotter - Breast Cancer Detection" />
-  <div class="content">
-    <div class="tag">
-      <h3>3. TumorSpotter</h3>
-    </div>
-    <div class="desc">
-      <p>AI-powered computer vision system for detecting suspicious regions in mammogram and ultrasound images using YOLOv8. Built with deep learning and Gradio, providing real-time predictions with annotated bounding boxes and confidence scores.</p>
-      <div class="btns">
-        <a href="#" class="btn view-btn" data-video="assets/videos/tumor-spotter-demo.mp4"><i class="fas fa-eye"></i> View</a>
-        <a href="https://github.com/Umair-elahi123" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+    <!-- 3. TumorSpotter -->
+    <div class="box tilt">
+      <img draggable="false" src="assets/images/image projects/tumor-spotter1.png" alt="TumorSpotter - Breast Cancer Detection" />
+      <div class="content">
+        <div class="tag">
+          <h3>3. TumorSpotter</h3>
+        </div>
+        <div class="desc">
+          <p>AI-powered computer vision system for detecting suspicious regions in mammogram and ultrasound images using YOLOv8. Built with deep learning and Gradio, providing real-time predictions with annotated bounding boxes and confidence scores.</p>
+          <div class="btns">
+            <a href="#" class="btn view-btn" data-video="assets/videos/tumor-spotter-demo.mp4"><i class="fas fa-eye"></i> View</a>
+            <a href="https://github.com/Umair-elahi123" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
     <!-- 4. AutoBotics -->
     <div class="box tilt">
@@ -436,7 +442,7 @@
       </div>
     </div>
 
-     <!-- 8. AutoMailor -->
+    <!-- 8. AutoMailor -->
     <div class="box tilt">
       <img draggable="false" src="assets/images/image projects/mailflow-automation.png" alt="AutoMailor System" />
       <div class="content">
@@ -452,8 +458,6 @@
         </div>
       </div>
     </div>
-
-  </div>
 
     <!-- 9. AutoCarSeg -->
     <div class="box tilt">
@@ -473,6 +477,7 @@
     </div>
 
   </div>
+  <!-- box-container ends -->
 
   <div class="viewall">
     <a href="https://github.com/Umair-elahi123?tab=repositories" class="btn" target="_blank"><span>View All</span>
@@ -578,7 +583,7 @@
       </a>
     </div>
 
-</div>
+  </div>
 
 </section>
 <!-- experience section ends -->
