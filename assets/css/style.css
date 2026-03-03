@@ -413,18 +413,22 @@ header .navbar ul li a:hover {
 
 .about .row .image1 img {
   margin: 10px;
-  width: 80%;
+  display: block !important;
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  visibility: visible !important;
   max-width: 33rem;
-  height: 33rem;
-  border-radius: 50%;
-  object-fit: cover;
+
   mix-blend-mode: normal;
   filter: brightness(1.1) saturate(1.1);
-  opacity: 0.9;
+  
   box-shadow: 0px 8px 10px #4a00e0;
   border: 0.4rem solid rgb(0, 1, 43);
   cursor: pointer;
-  
+
 }
 
 .about .row .image1 img:hover {
