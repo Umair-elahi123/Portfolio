@@ -27,10 +27,6 @@ body {
   color: #fff;
 }
 
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-}
 html::-webkit-scrollbar {
   width: 0.8rem;
   
@@ -421,10 +417,9 @@ header .navbar ul li a:hover {
   opacity: 1 !important;
   visibility: visible !important;
   max-width: 33rem;
-
+  
   mix-blend-mode: normal;
   filter: brightness(1.1) saturate(1.1);
-  
   box-shadow: 0px 8px 10px #4a00e0;
   border: 0.4rem solid rgb(0, 1, 43);
   cursor: pointer;
