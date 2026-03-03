@@ -414,9 +414,10 @@ header .navbar ul li a:hover {
 .about .row .image1 img {
   margin: 10px;
   width: 80%;
-  max-width: 33rem; /* Limite la largeur */
-  height: auto;
-  border-radius: 30px;
+  max-width: 33rem;
+  height: 33rem;
+  border-radius: 50%;
+  object-fit: cover;
   mix-blend-mode: normal;
   filter: brightness(1.1) saturate(1.1);
   opacity: 0.9;
