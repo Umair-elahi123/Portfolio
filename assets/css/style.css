@@ -954,6 +954,17 @@ header .navbar ul li a:hover {
 .experience .heading{
   color: rgb(0, 1, 43);
 }
+.experience .sub-heading {
+  color: rgb(0, 1, 43);
+  font-size: 2rem;
+  text-align: center;
+  margin: 3rem 0 1.5rem 0;
+  padding-top: 1rem;
+}
+.experience .sub-heading i {
+  margin-right: 0.5rem;
+  color: crimson;
+}
 .experience .timeline::after {
   content: "";
   position: absolute;
@@ -1081,6 +1092,10 @@ header .navbar ul li a:hover {
 @media screen and (max-width: 600px) {
   .experience {
     min-height: 80vh;
+  }
+  .experience .sub-heading {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
   }
   .experience .timeline {
     margin-top: 2rem;
