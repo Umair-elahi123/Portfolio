@@ -281,8 +281,7 @@ srtop.reveal('.about .content .tag p', { delay: 200 });
 srtop.reveal('.about .content p', { delay: 200 });
 srtop.reveal('.about .content .box-container', { delay: 200 });
 srtop.reveal('.about .row .image1', { delay: 600 });
-srtop.reveal('.availability .availability-content', { delay: 200 });
-srtop.reveal('.availability .resumebtn', { delay: 400 });
+srtop.reveal('.availability .availability-wrap', { delay: 200 });
 
 
 /* SCROLL SKILLS */

@@ -619,18 +619,27 @@ header .navbar ul li a:hover {
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: clamp(4rem, 8vh, 6rem);
-  padding-bottom: 3rem;
+  padding: var(--section-y) var(--section-x) 3rem;
   position: relative;
   z-index: 2;
 }
 
+.availability-wrap {
+  width: min(92%, 680px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+}
+
 .availability .heading {
   color: rgb(0, 1, 43);
-  margin-bottom: 2rem;
+  margin: 0;
+  width: 100%;
 }
 
 .availability .heading span {
@@ -638,47 +647,49 @@ header .navbar ul li a:hover {
 }
 
 .availability-content {
-  width: min(92%, 900px);
-  margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3rem);
+  width: 100%;
+  padding: clamp(2.5rem, 4vw, 3.5rem);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.95);
+  background: #ffffff;
   border: 1px solid rgba(74, 0, 224, 0.15);
-  box-shadow: 0 8px 24px rgba(0, 1, 43, 0.08);
-}
-
-.availability-content h3 {
-  color: rgb(0, 1, 43);
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  font-family: "Nunito", sans-serif;
-  font-weight: 900;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 1, 43, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .availability .info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem 2rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem 1.8rem;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(74, 0, 224, 0.04), rgba(255, 255, 255, 0.9));
-  border: 1px solid rgba(74, 0, 224, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  text-align: left;
 }
 
 .availability .info-grid p {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  line-height: 1.9rem;
+  line-height: 1.85rem;
   margin: 0;
+  padding: 0.85rem 1.2rem;
   font-family: "Nunito", sans-serif;
   text-transform: none;
+  border-left: 4px solid #4a00e0;
+  background: linear-gradient(90deg, rgba(74, 0, 224, 0.06), rgba(255, 255, 255, 0.8));
+  border-radius: 0 10px 10px 0;
 }
 
 .availability .info-grid p strong {
   color: #4a00e0;
   font-weight: 800;
+  display: inline-block;
+  min-width: 11rem;
 }
 
 .availability .resumebtn {
@@ -686,10 +697,10 @@ header .navbar ul li a:hover {
 }
 
 @media screen and (max-width: 600px) {
-  .availability .info-grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-    padding: 1.2rem;
+  .availability .info-grid p strong {
+    min-width: auto;
+    display: block;
+    margin-bottom: 0.2rem;
   }
 }
 /* availability section ends */
