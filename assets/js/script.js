@@ -17,17 +17,17 @@ $(document).ready(function () {
 
         // scroll spy
         const headerHeight = $('header').outerHeight();
-        $('section').each(function () {
-            let height = $(this).outerHeight();
-            let offset = $(this).offset().top - headerHeight;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
+        const scrollPos = $(window).scrollTop() + headerHeight + 20;
+        let currentSection = 'home';
 
-            if (top >= offset && top < offset + height - headerHeight) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
+        $('section[id]').each(function () {
+            if ($(this).offset().top <= scrollPos) {
+                currentSection = $(this).attr('id');
             }
         });
+
+        $('.navbar ul li a').removeClass('active');
+        $('.navbar').find(`[href="#${currentSection}"]`).addClass('active');
     });
     // partie hadhi mta3 les vedio 
 // Get modal elements
@@ -72,23 +72,47 @@ viewButtons.forEach(button => {
 });
 
 // Event listener for closing the modal
-closeBtn.addEventListener('click', closeModal);
+if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+}
 
 // Close modal when clicking outside the modal content
-window.addEventListener('click', function(event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
+if (modal) {
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+}
+
+    const scrollTargetMap = {
+        '#skills': '#skillsGrid',
+        '#experience': '#experience',
+        '#contact': '#contact',
+    };
+
     // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
+    $('a[href^="#"]').on('click', function (e) {
+        const href = $(this).attr('href');
+        if (!href || href === '#') {
+            return;
+        }
+
+        const targetSelector = scrollTargetMap[href] || href;
+        const target = $(targetSelector);
+        if (!target.length) {
+            return;
+        }
+
         e.preventDefault();
         const headerHeight = $('header').outerHeight();
-        const href = $(this).attr('href');
-        const target = href === '#skills' ? $('#skillsGrid') : $(href);
+
         $('html, body').animate({
             scrollTop: target.offset().top - headerHeight,
-        }, 500, 'linear')
+        }, 500, 'linear');
+
+        $('.navbar ul li a').removeClass('active');
+        $('.navbar').find(`[href="${href}"]`).addClass('active');
     });
 
     // <!-- emailjs to mail contact form data -->
