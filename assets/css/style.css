@@ -255,12 +255,14 @@ header .navbar ul li a:hover {
   color: rgb(0, 1, 43);
   font-weight: 600;
   padding: 1rem 0;
+  text-transform: none;
 }
 .home .content p span {
   font-size: 2.5rem;
   color: #4a00e0;
   font-weight: 600;
   padding: 1rem 0;
+  text-transform: none;
 }
 .home .btn {
   margin-top: 1rem;
@@ -403,20 +405,26 @@ header .navbar ul li a:hover {
   color: rgb(0, 1, 43);
 }
 .about .row .image1 {
-  flex: 1 1 30rem;
+  flex: 1 1 38rem;
   text-align: center;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about .row .image1 img {
-  margin: 10px;
-  width: 80%;
-  max-width: 33rem;
-  height: auto;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 48rem;
+  height: 100%;
   border-radius: 30px;
+  object-fit: cover;
   mix-blend-mode: normal;
-  filter: brightness(1.1) saturate(1.1);
-  opacity: 0.9;
-  box-shadow: 0px 8px 10px #4a00e0;
+  filter: brightness(1.05) saturate(1.05);
+  opacity: 1;
+  box-shadow: 0px 12px 24px rgba(74, 0, 224, 0.25);
   border: 0.4rem solid rgb(0, 1, 43);
   cursor: pointer;
 }
@@ -458,14 +466,67 @@ header .navbar ul li a:hover {
   font-size: 1.8rem;
   font-weight: 900;
   font-family: "Nunito";
-  
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
 }
 
-.about .row .content p {
-  font-size: 1.5rem;
+.about .row .content > p {
+  font-size: 1.45rem;
   font-family: "Nunito";
-  font-weight: 900;
+  font-weight: 500;
   text-transform: none;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about .row .content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.about .row .content ul li {
+  font-size: 1.35rem;
+  font-family: "Nunito";
+  font-weight: 500;
+  line-height: 1.9rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #4a00e0;
+  background: linear-gradient(90deg, rgba(74, 0, 224, 0.08), rgba(255, 255, 255, 0.6));
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 1, 43, 0.06);
+}
+
+.about .row .content ul li strong {
+  color: rgb(0, 1, 43);
+  font-weight: 800;
+}
+
+.about .row .content .info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 1.8rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(74, 0, 224, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 1, 43, 0.08);
+}
+
+.about .row .content .info-grid p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  margin: 0;
+}
+
+.about .row .content .info-grid p strong {
+  color: #4a00e0;
+  font-weight: 800;
 }
 
 .resumebtn {
@@ -514,6 +575,15 @@ header .navbar ul li a:hover {
   }
   .about .row .content {
     padding: 1rem;
+  }
+  .about .row .image1 img {
+    min-height: 28rem;
+    width: 100%;
+  }
+  .about .row .content .info-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 1.2rem;
   }
   .about .row .content .box-container {
     gap: 0;
@@ -1047,7 +1117,19 @@ header .navbar ul li a:hover {
 }
 .experience .content .desc {
   margin-left: 1.5rem;
+  margin-right: 1.5rem;
   padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+.experience .content .desc ul {
+  margin: 0.8rem 0 0 0;
+  padding-left: 2rem;
+  padding-right: 0.5rem;
+}
+.experience .content .desc li {
+  margin-bottom: 0.7rem;
+  padding-left: 0.3rem;
+  line-height: 1.6;
 }
 .experience .content .desc h3 {
   font-size: 1.5rem;

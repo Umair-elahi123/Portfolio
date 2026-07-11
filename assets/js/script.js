@@ -100,10 +100,10 @@ window.addEventListener('click', function(event) {
         .then(response => response.json())
         .then(result => {
             if (result.success) {
-                alert("Form submitted successfully! ✅");
+                alert("Form submitted successfully!");
                 document.getElementById("contact-form").reset();
             } else {
-                alert("Form submission failed! ❌ Please try again.");
+                alert("Form submission failed! Please try again.");
             }
         })
         .catch(error => {
@@ -119,18 +119,25 @@ document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
             document.title = "Portfolio | Umair Elahi";
-            $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
             document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "assets/images/favhand.png");
         }
+        $("#favicon").attr("href", "assets/images/favicon.svg");
     });
 
 // <!-- typed js effect starts -->
-// <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Data Science", "Artificial Intelligence", "Computer Vision","Machine Learning", "Deep Learning"],
+    strings: [
+        "Automation Engineer",
+        "Workflow Automation",
+        "LLM-Powered Agents",
+        "Data Science",
+        "Artificial Intelligence",
+        "Computer Vision",
+        "Machine Learning",
+        "Deep Learning"
+    ],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
