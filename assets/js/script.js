@@ -1,5 +1,31 @@
 $(document).ready(function () {
 
+    const FIT_SECTION_IDS = ['home', 'about', 'skills', 'education'];
+
+    function fitViewportSections() {
+        const headerHeight = $('header').outerHeight();
+        const availableHeight = window.innerHeight - headerHeight - 10;
+
+        FIT_SECTION_IDS.forEach((id) => {
+            const section = document.getElementById(id);
+            if (!section) return;
+
+            const inner = section.querySelector('.viewport-fit-inner');
+            if (!inner) return;
+
+            inner.style.transform = 'scale(1)';
+            inner.style.marginBottom = '0';
+            inner.style.width = '100%';
+
+            const contentHeight = inner.offsetHeight;
+            if (contentHeight <= 0) return;
+
+            const scale = Math.min(1, availableHeight / contentHeight);
+            inner.style.transform = `scale(${scale})`;
+            inner.style.marginBottom = `${-(contentHeight * (1 - scale))}px`;
+        });
+    }
+
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -28,6 +54,7 @@ $(document).ready(function () {
                 $('.navbar').find(`[href="#${id}"]`).addClass('active');
             }
         });
+        fitViewportSections();
     });
     // partie hadhi mta3 les vedio 
 // Get modal elements
@@ -88,8 +115,14 @@ window.addEventListener('click', function(event) {
         const target = href === '#skills' ? $('#skillsGrid') : $(href);
         $('html, body').animate({
             scrollTop: target.offset().top - headerHeight,
-        }, 500, 'linear')
+        }, 500, 'linear', function () {
+            fitViewportSections();
+        })
     });
+
+    fitViewportSections();
+    setTimeout(fitViewportSections, 300);
+    setTimeout(fitViewportSections, 2200);
 
     // <!-- emailjs to mail contact form data -->
     document.getElementById("contact-form").addEventListener("submit", function (event) {

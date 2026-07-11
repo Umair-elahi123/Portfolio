@@ -215,6 +215,20 @@ header .navbar ul li a:hover {
   min-height: 100vh;
   align-items: center;
 }
+.home.fit-viewport {
+  display: block;
+  overflow: hidden;
+}
+.home .viewport-fit-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  transform-origin: top center;
+}
 .home #particles-js {
   position: absolute;
   top: 0;
@@ -1540,6 +1554,48 @@ form .button-area {
 /* common media queries ends*/
 
 /* zoom & responsive alignment starts */
+.fit-viewport {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh !important;
+  max-height: 100dvh;
+  overflow: hidden;
+  padding-top: var(--header-height) !important;
+  padding-bottom: 0 !important;
+  padding-left: var(--section-x) !important;
+  padding-right: var(--section-x) !important;
+  box-sizing: border-box;
+}
+
+.fit-viewport .viewport-fit-inner {
+  width: 100%;
+  transform-origin: top center;
+}
+
+.fit-viewport.about .viewport-fit-inner,
+.fit-viewport.education .viewport-fit-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fit-viewport.skills .viewport-fit-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.fit-viewport.skills .container {
+  max-height: none;
+  overflow: visible;
+  width: min(96%, 1200px);
+}
+
+.fit-viewport.education {
+  justify-content: center;
+}
+
 @media (max-width: 1100px) {
   .about .row {
     justify-content: center;
