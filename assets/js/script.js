@@ -147,7 +147,6 @@ if (modal) {
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
     strings: [
-        "Automation",
         "Workflow Automation",
         "LLM Agents",
         "Data Science",
