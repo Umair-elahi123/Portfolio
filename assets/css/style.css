@@ -23,6 +23,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
+  scroll-snap-type: y proximity;
 }
 body {
   background: #f7f7f7;
@@ -95,6 +96,8 @@ section {
   min-height: 100dvh;
   padding: var(--section-y) var(--section-x) 3rem;
   scroll-margin-top: var(--header-height);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .heading {
   font-size: clamp(2.4rem, 4vw, 3.5rem);
@@ -621,9 +624,10 @@ header .navbar ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--section-y) var(--section-x) 3rem;
+  padding: var(--header-height) var(--section-x) 2rem;
   position: relative;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .availability-wrap {
@@ -633,7 +637,8 @@ header .navbar ul li a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  transform: translateY(-2.5vh);
 }
 
 .availability .heading {
@@ -723,8 +728,7 @@ header .navbar ul li a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: clamp(5rem, 10vh, 7rem);
-  padding-bottom: 2rem;
+  padding: calc(var(--header-height) + 1.5rem) var(--section-x) 2rem;
   box-sizing: border-box;
 }
 .skills > .heading {
@@ -749,7 +753,7 @@ header .navbar ul li a:hover {
 
 .skills .container .row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: clamp(0.8rem, 2vw, 1.5rem);
 }
 .skills .container .bar {
@@ -1696,6 +1700,12 @@ form .button-area {
   }
 }
 
+@media (max-width: 1100px) {
+  .skills .container .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --header-height: 6rem;
@@ -1703,7 +1713,7 @@ form .button-area {
   }
 
   .skills .container .row {
-    grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .work .box-container .box {

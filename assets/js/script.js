@@ -85,31 +85,32 @@ if (modal) {
     });
 }
 
-    const scrollTargetMap = {
-        '#skills': '#skillsGrid',
-        '#experience': '#experience',
-        '#contact': '#contact',
-    };
+    function scrollToSection(sectionId) {
+        const target = $(`section#${sectionId}`);
+        if (!target.length) {
+            return false;
+        }
 
-    // smooth scrolling
+        const headerHeight = $('header').outerHeight();
+        $('html, body').stop(true).animate({
+            scrollTop: target.offset().top - headerHeight,
+        }, 500, 'linear');
+        return true;
+    }
+
+    // smooth scrolling — always land at the top of each section
     $('a[href^="#"]').on('click', function (e) {
         const href = $(this).attr('href');
         if (!href || href === '#') {
             return;
         }
 
-        const targetSelector = scrollTargetMap[href] || href;
-        const target = $(targetSelector);
-        if (!target.length) {
+        const sectionId = href.slice(1);
+        if (!scrollToSection(sectionId)) {
             return;
         }
 
         e.preventDefault();
-        const headerHeight = $('header').outerHeight();
-
-        $('html, body').animate({
-            scrollTop: target.offset().top - headerHeight,
-        }, 500, 'linear');
 
         $('.navbar ul li a').removeClass('active');
         $('.navbar').find(`[href="${href}"]`).addClass('active');
