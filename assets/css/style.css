@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
 
+:root {
+  --header-height: 6.5rem;
+  --section-x: clamp(1.2rem, 4vw, 7rem);
+  --section-y: clamp(5rem, 8vh, 8rem);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +22,7 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 body {
   background: #f7f7f7;
@@ -78,17 +85,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.7rem 10%;
-  height: 6.5rem;
+  padding: 1.7rem clamp(2rem, 5vw, 10%);
+  height: var(--header-height);
   background: rgb(0, 1, 43);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
 }
 section {
   min-height: 100vh;
-  padding: 2rem 7%;
+  min-height: 100dvh;
+  padding: var(--section-y) var(--section-x) 3rem;
+  scroll-margin-top: var(--header-height);
 }
 .heading {
-  font-size: 3.5rem;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
   color: rgb(32, 32, 32);
   font-weight: 800;
   text-align: center;
@@ -380,7 +389,8 @@ header .navbar ul li a:hover {
 .about {
   background: #ffffff;
   min-height: 100vh;
-  padding-top: 5rem;
+  min-height: 100dvh;
+  padding-top: clamp(4rem, 8vh, 6rem);
   padding-bottom: 3rem;
   position: relative;
   z-index: 2;
@@ -390,20 +400,16 @@ header .navbar ul li a:hover {
 .about .row {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: clamp(2rem, 4vw, 4rem);
   flex-wrap: wrap;
-  padding: 1rem 1rem 0;
-}
-
-.about .heading{
-  color: rgb(0, 1, 43);
-  margin-top: 0;
-  margin-bottom: 1rem;
+  padding: 1rem 0 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .about .row .image1 {
-  flex: 0 0 34rem;
-  max-width: 34rem;
+  flex: 0 1 clamp(22rem, 32vw, 34rem);
+  max-width: 100%;
   align-self: center;
   border-radius: 30px;
   overflow: hidden;
@@ -416,7 +422,7 @@ header .navbar ul li a:hover {
 .about .row .image1 img {
   display: block;
   width: 100%;
-  height: 40rem;
+  height: clamp(22rem, 45vh, 40rem);
   object-fit: cover;
   object-position: center 15%;
   border: none;
@@ -432,8 +438,14 @@ header .navbar ul li a:hover {
 
 }
 
+.about .heading{
+  color: rgb(0, 1, 43);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .about .row .content {
-  flex: 1 1 40rem;
+  flex: 1 1 clamp(28rem, 45vw, 50rem);
   font-size: 1.5rem;
   margin-top: 0;
   text-transform: none;
@@ -604,12 +616,13 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills {
   min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(to bottom, #57059e, #4a00e0);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 7rem;
+  padding-top: clamp(5rem, 10vh, 7rem);
   padding-bottom: 2rem;
   box-sizing: border-box;
 }
@@ -626,18 +639,17 @@ header .navbar ul li a:hover {
   background: rgb(0, 1, 43);
   color: #0e2431;
   border-radius: 1rem;
-  padding: 2rem;
-  width: 92%;
-  max-width: 1200px;
+  padding: clamp(1rem, 2vw, 2rem);
+  width: min(92%, 1200px);
+  max-height: calc(100dvh - var(--header-height) - 3rem);
+  overflow-y: auto;
   margin: 0 auto;
 }
 
 .skills .container .row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  flex-wrap: wrap;
-  gap: 1.8rem;
-
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.8rem);
 }
 .skills .container .bar {
   margin-bottom: 15px;
@@ -719,10 +731,11 @@ header .navbar ul li a:hover {
 .education {
   background: #e5ecfb;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 8rem;
+  padding-top: clamp(5rem, 10vh, 8rem);
   padding-bottom: 4rem;
 }
 
@@ -864,15 +877,15 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin: 2rem 5rem;
+  margin: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 5rem);
 }
 .work .box-container .box {
-  flex: 1 1 50rem;
+  flex: 1 1 clamp(28rem, 45vw, 50rem);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  height: 30rem;
+  height: clamp(22rem, 35vh, 30rem);
 }
 .work .box-container .box img {
   height: 100%;
@@ -1525,6 +1538,61 @@ form .button-area {
   }
 }
 /* common media queries ends*/
+
+/* zoom & responsive alignment starts */
+@media (max-width: 1100px) {
+  .about .row {
+    justify-content: center;
+  }
+
+  .about .row .image1 {
+    flex: 1 1 min(100%, 30rem);
+  }
+
+  .about .row .content {
+    flex: 1 1 100%;
+  }
+
+  .about .row .content .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  header .navbar li {
+    margin-left: 1.5rem;
+  }
+
+  header .navbar ul li a {
+    font-size: 1.4rem;
+  }
+
+  .home .content h2,
+  .home .content h2 span {
+    font-size: clamp(3.2rem, 8vw, 5rem);
+  }
+
+  .home .content p,
+  .home .content p span {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 6rem;
+    --section-y: clamp(4.5rem, 8vh, 6rem);
+  }
+
+  .skills .container .row {
+    grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  }
+
+  .work .box-container .box {
+    flex: 1 1 100%;
+  }
+}
+/* zoom & responsive alignment ends */
 
 /* scroll top starts */
 #scroll-top {
