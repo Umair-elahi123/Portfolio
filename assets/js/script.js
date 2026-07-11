@@ -280,8 +280,9 @@ srtop.reveal('.about .content h4', { delay: 200 });
 srtop.reveal('.about .content .tag p', { delay: 200 });
 srtop.reveal('.about .content p', { delay: 200 });
 srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .resumebtn', { delay: 200 });
 srtop.reveal('.about .row .image1', { delay: 600 });
+srtop.reveal('.availability .availability-content', { delay: 200 });
+srtop.reveal('.availability .resumebtn', { delay: 400 });
 
 
 /* SCROLL SKILLS */

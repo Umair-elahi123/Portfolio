@@ -613,6 +613,87 @@ header .navbar ul li a:hover {
 /* about media queries ends*/
 /* about section ends */
 
+/* availability section starts */
+.availability {
+  background: #ffffff;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(4rem, 8vh, 6rem);
+  padding-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.availability .heading {
+  color: rgb(0, 1, 43);
+  margin-bottom: 2rem;
+}
+
+.availability .heading span {
+  color: #4a00e0;
+}
+
+.availability-content {
+  width: min(92%, 900px);
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(74, 0, 224, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 1, 43, 0.08);
+}
+
+.availability-content h3 {
+  color: rgb(0, 1, 43);
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.availability .info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.8rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(74, 0, 224, 0.04), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(74, 0, 224, 0.12);
+}
+
+.availability .info-grid p {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  text-transform: none;
+}
+
+.availability .info-grid p strong {
+  color: #4a00e0;
+  font-weight: 800;
+}
+
+.availability .resumebtn {
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .availability .info-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 1.2rem;
+  }
+}
+/* availability section ends */
+
 /* skills section starts */
 .skills {
   min-height: 100vh;
