@@ -1,29 +1,5 @@
 $(document).ready(function () {
 
-    const HEADER_OFFSET = 110;
-
-    function updateActiveNav() {
-        let current = 'home';
-        const scrollPos = $(window).scrollTop() + HEADER_OFFSET + 15;
-
-        $('section').each(function () {
-            const top = $(this).offset().top;
-            if (scrollPos >= top) {
-                current = $(this).attr('id');
-            }
-        });
-
-        $('.navbar ul li a').removeClass('active');
-        $('.navbar').find(`[href="#${current}"]`).addClass('active');
-    }
-
-    function scrollToTarget(target) {
-        if (!target.length) return;
-        $('html, body').animate({
-            scrollTop: target.offset().top - HEADER_OFFSET
-        }, 500, 'linear');
-    }
-
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -40,7 +16,18 @@ $(document).ready(function () {
         }
 
         // scroll spy
-        updateActiveNav();
+        const headerHeight = $('header').outerHeight();
+        $('section').each(function () {
+            let height = $(this).outerHeight();
+            let offset = $(this).offset().top - headerHeight;
+            let top = $(window).scrollTop();
+            let id = $(this).attr('id');
+
+            if (top >= offset && top < offset + height - headerHeight) {
+                $('.navbar ul li a').removeClass('active');
+                $('.navbar').find(`[href="#${id}"]`).addClass('active');
+            }
+        });
     });
     // partie hadhi mta3 les vedio 
 // Get modal elements
@@ -96,18 +83,10 @@ window.addEventListener('click', function(event) {
     // smooth scrolling
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
-        const href = $(this).attr('href');
-        let target;
-
-        if (href === '#skills') {
-            target = $('#skillsGrid');
-        } else if (href === '#about') {
-            target = $('#about');
-        } else {
-            target = $(href);
-        }
-
-        scrollToTarget(target);
+        const headerHeight = $('header').outerHeight();
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top - headerHeight,
+        }, 500, 'linear')
     });
 
     // <!-- emailjs to mail contact form data -->
