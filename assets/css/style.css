@@ -378,7 +378,13 @@ header .navbar ul li a:hover {
 
 /* about section starts */
 .about {
-  background: rgba(255, 255, 255, 0.727);
+  background: #ffffff;
+  min-height: 100vh;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
 }
 
 .about .row {
