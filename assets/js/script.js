@@ -83,7 +83,7 @@ window.addEventListener('click', function(event) {
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
+            scrollTop: $($(this).attr('href')).offset().top - 80,
         }, 500, 'linear')
     });
 
@@ -115,23 +115,12 @@ window.addEventListener('click', function(event) {
 
 });
 
-document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Umair Elahi";
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-        }
-        $("#favicon").attr("href", "assets/images/favicon.svg");
-    });
-
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
     strings: [
-        "Automation Engineer",
+        "Automation",
         "Workflow Automation",
-        "LLM-Powered Agents",
+        "LLM Agents",
         "Data Science",
         "Artificial Intelligence",
         "Computer Vision",
