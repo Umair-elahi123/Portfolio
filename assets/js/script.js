@@ -1,5 +1,29 @@
 $(document).ready(function () {
 
+    const HEADER_OFFSET = 110;
+
+    function updateActiveNav() {
+        let current = 'home';
+        const scrollPos = $(window).scrollTop() + HEADER_OFFSET + 15;
+
+        $('section').each(function () {
+            const top = $(this).offset().top;
+            if (scrollPos >= top) {
+                current = $(this).attr('id');
+            }
+        });
+
+        $('.navbar ul li a').removeClass('active');
+        $('.navbar').find(`[href="#${current}"]`).addClass('active');
+    }
+
+    function scrollToTarget(target) {
+        if (!target.length) return;
+        $('html, body').animate({
+            scrollTop: target.offset().top - HEADER_OFFSET
+        }, 500, 'linear');
+    }
+
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -16,17 +40,7 @@ $(document).ready(function () {
         }
 
         // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 80;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
-        });
+        updateActiveNav();
     });
     // partie hadhi mta3 les vedio 
 // Get modal elements
@@ -82,9 +96,18 @@ window.addEventListener('click', function(event) {
     // smooth scrolling
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top - 80,
-        }, 500, 'linear')
+        const href = $(this).attr('href');
+        let target;
+
+        if (href === '#skills') {
+            target = $('#skillsGrid');
+        } else if (href === '#about') {
+            target = $('#about');
+        } else {
+            target = $(href);
+        }
+
+        scrollToTarget(target);
     });
 
     // <!-- emailjs to mail contact form data -->
