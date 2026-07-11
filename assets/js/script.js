@@ -84,8 +84,10 @@ window.addEventListener('click', function(event) {
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
         const headerHeight = $('header').outerHeight();
+        const href = $(this).attr('href');
+        const target = href === '#skills' ? $('#skillsGrid') : $(href);
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top - headerHeight,
+            scrollTop: target.offset().top - headerHeight,
         }, 500, 'linear')
     });
 

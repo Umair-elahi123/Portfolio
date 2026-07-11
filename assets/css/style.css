@@ -605,6 +605,16 @@ header .navbar ul li a:hover {
 .skills {
   min-height: 100vh;
   background: linear-gradient(to bottom, #57059e, #4a00e0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+.skills > .heading {
+  display: none;
 }
 .skills h2 {
   color: #fff;
@@ -617,9 +627,9 @@ header .navbar ul li a:hover {
   color: #0e2431;
   border-radius: 1rem;
   padding: 2rem;
-  width: 90%;
-  margin: auto;
-  margin-top: 2rem;
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .skills .container .row {
